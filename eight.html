@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Search</title>
+<script>
+    function searchBook() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("bookList");
+        li = ul.getElementsByTagName('li');
+        
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                alert("Book found: " + txtValue);
+                return;
+            }
+        }
+        alert("Book not found");
+    }
+</script>
+</head>
+<body>
+
+<h2>List of Books</h2>
+
+<input type="text" id="searchInput" placeholder="Search...">
+<button onclick="searchBook()">Search</button>
+
+<ol id="bookList">
+    <li><a href="#">Book 1</a></li>
+    <li><a href="#">Book 2</a></li>
+    <li><a href="#">Book 3</a></li>
+    <li><a href="#">Book 4</a></li>
+    <li><a href="#">Book 5</a></li>
+    <li><a href="#">Book 6</a></li>
+    <li><a href="#">Book 7</a></li>
+    <li><a href="#">Book 8</a></li>
+    <li><a href="#">Book 9</a></li>
+    <li><a href="#">Book 10</a></li>
+</ol>
+
+</body>
+</html>

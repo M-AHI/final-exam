@@ -1,0 +1,65 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        th, td {
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem 1</h1>
+    <table id="dataTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Jamiul Hasan</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Mohammad Rahman</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>Abdul Kadir</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>104</td>
+            <td>Sakib Al Hasan</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>Ishtiaq Ahmed</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function deleteRow(button) {
+            // Get the row of the button
+            var row = button.parentNode.parentNode;
+            // Remove the row from the table
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+</html>
